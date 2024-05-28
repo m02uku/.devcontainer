@@ -21,6 +21,16 @@
   // Theme
   "workbench.colorTheme": "GitHub Dark Dimmed",
   "workbench.iconTheme": "material-icon-theme",
+  // Live sass compiler
+  "liveSassCompile.settings.watchOnLaunch": true,
+  "liveSassCompile.settings.formats": [
+    {
+      "format": "expanded",
+      "extensionName": ".css",
+      "savePath": null,
+      "savePathReplacementPairs": null
+    }
+  ],
   // Git
 
   // Exclude
