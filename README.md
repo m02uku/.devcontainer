@@ -1,8 +1,8 @@
 # m02uku-devcontainer
 
 ## How to use
-1. リポジトリ内にクローンする
-1. 以下を実行
+1. プロジェクト内にクローンする
+1. プロジェクトルートから次のコマンドを実行：
 ```bash 
 sh m02uku-devcontainer/install.sh
 ```
