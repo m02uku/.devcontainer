@@ -1,0 +1,26 @@
+{
+  // Editor
+  "editor.formatOnSave": true,
+  // Copilot
+  "github.copilot.editor.enableAutoCompletions": true,
+  // Formatter
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.black-formatter"
+  },
+  "prettier.printWidth": 80,
+  // Theme
+  "workbench.colorTheme": "GitHub Dark Dimmed",
+  "workbench.iconTheme": "material-icon-theme",
+  // Git
+
+  // Exclude
+  "files.exclude": {
+    "**/.DS_Store": false,
+    "**/.git": false,
+    "**/.hg": false,
+    "**/.svn": false,
+    "**/CVS": false,
+    "**/Thumbs.db": false
+  }
+}
