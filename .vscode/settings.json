@@ -11,7 +11,7 @@
     "github.copilot.editor.enableAutoCompletions": true,
     // Formatter
     "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "prettier.printWidth": 80,
+    "prettier.printWidth": 1024,
     "prettier.tabWidth": 4,
     "isort.args": ["--profile", "black"],
     "editor.codeActionsOnSave": {
