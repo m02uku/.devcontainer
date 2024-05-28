@@ -1,45 +1,46 @@
 {
-  // Editor & UI
-  "editor.formatOnSave": true,
-  "editor.insertSpaces": true,
-  "workbench.activityBar.location": "top",
-  "workbench.editor.wrapTabs": true,
-  "editor.minimap.enabled": false,
-  "editor.wordWrap": "on",
-  // Copilot
-  "github.copilot.editor.enableAutoCompletions": true,
-  // Formatter
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "isort.args": ["--profile", "black"],
-  "editor.codeActionsOnSave": {
-    "source.organizeImports": "always"
-  },
-  "[python]": {
-    "editor.defaultFormatter": "ms-python.black-formatter"
-  },
-  "prettier.printWidth": 80,
-  // Theme
-  "workbench.colorTheme": "GitHub Dark Dimmed",
-  "workbench.iconTheme": "material-icon-theme",
-  // Live sass compiler
-  "liveSassCompile.settings.watchOnLaunch": true,
-  "liveSassCompile.settings.formats": [
-    {
-      "format": "expanded",
-      "extensionName": ".css",
-      "savePath": null,
-      "savePathReplacementPairs": null
-    }
-  ],
-  // Git
+    // Editor & UI
+    "editor.formatOnSave": true,
+    "editor.insertSpaces": true,
+    "workbench.activityBar.location": "top",
+    "workbench.editor.wrapTabs": true,
+    "editor.minimap.enabled": false,
+    "editor.wordWrap": "on",
+    // Copilot
+    "github.copilot.editor.enableAutoCompletions": true,
+    // Formatter
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "prettier.printWidth": 80,
+    "prettier.tabWidth": 4,
+    "isort.args": ["--profile", "black"],
+    "editor.codeActionsOnSave": {
+        "source.organizeImports": "always"
+    },
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.black-formatter"
+    },
+    // Theme
+    "workbench.colorTheme": "GitHub Dark Dimmed",
+    "workbench.iconTheme": "material-icon-theme",
+    // Live sass compiler
+    "liveSassCompile.settings.watchOnLaunch": true,
+    "liveSassCompile.settings.formats": [
+        {
+            "format": "expanded",
+            "extensionName": ".css",
+            "savePath": null,
+            "savePathReplacementPairs": null
+        }
+    ],
+    // Git
 
-  // Exclude
-  "files.exclude": {
-    "**/.DS_Store": false,
-    "**/.git": false,
-    "**/.hg": false,
-    "**/.svn": false,
-    "**/CVS": false,
-    "**/Thumbs.db": false
-  }
+    // Exclude
+    "files.exclude": {
+        "**/.DS_Store": false,
+        "**/.git": false,
+        "**/.hg": false,
+        "**/.svn": false,
+        "**/CVS": false,
+        "**/Thumbs.db": false
+    }
 }
