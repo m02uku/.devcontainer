@@ -5,10 +5,9 @@
 ```bash
 rm -rf .devcontainer && rm -rf .vscode
 ```
-1. プロジェクト内にクローンする
-1. プロジェクトルートから次のコマンドを実行：
-```bash 
-sh m02uku-devcontainer/install.sh
+1. プロジェクトルート内にクローンし、`install.sh` を実行：
+```bash
+git clone https://github.com/m02uku/m02uku-devcontainer.git && sh m02uku-devcontainer/install.sh
 ```
 
 以上。
