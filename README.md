@@ -1,7 +1,11 @@
 # m02uku-devcontainer
 
 ## How to use
-1. プロジェクト内にクローンする
+0. すでに `.devcontainer` や `.vscode` がある場合：
+```bash
+rm -rf .devcontainer && rm -rf .vscode
+```
+2. プロジェクト内にクローンする
 1. プロジェクトルートから次のコマンドを実行：
 ```bash 
 sh m02uku-devcontainer/install.sh
