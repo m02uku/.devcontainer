@@ -5,6 +5,6 @@
 以上。
 
 # 注意事項
-```bash:container内で開発サーバをたてる場合には：
+```bash:container内で開発サーバをたてる場合には
 npm run dev -- --host
 ```
