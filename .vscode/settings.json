@@ -4,6 +4,7 @@
     "editor.insertSpaces": true,
     "workbench.activityBar.location": "top",
     "workbench.editor.wrapTabs": true,
+    "editor.tabSize": 4,
     "editor.minimap.enabled": false,
     "editor.wordWrap": "on",
     // Copilot
