@@ -2,7 +2,10 @@
 
 ## How to use
 1. リポジトリ内にクローンする
-1. `m02uku-devcontainer/.devcontainer` と `m02uku-devcontainer/.vscode` を外に出す
+1. 以下を実行
+```bash 
+sh m02uku-devcontainer/install.sh
+```
 
 以上。
 
