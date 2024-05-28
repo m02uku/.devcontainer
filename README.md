@@ -9,6 +9,12 @@ rm -rf .devcontainer && rm -rf .vscode && rm -rf m02uku-devcontainer
 ```bash
 git clone https://github.com/m02uku/m02uku-devcontainer.git && sh m02uku-devcontainer/install.sh
 ```
+1. `.gitignore` に以下を追加：
+```
+.devcontainer
+.vscode
+m02uku-devcontainer
+```
 
 以上。
 
