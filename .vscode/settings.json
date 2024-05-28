@@ -1,10 +1,19 @@
 {
-  // Editor
+  // Editor & UI
   "editor.formatOnSave": true,
+  "editor.insertSpaces": true,
+  "workbench.activityBar.location": "top",
+  "workbench.editor.wrapTabs": true,
+  "editor.minimap.enabled": false,
+  "editor.wordWrap": "on",
   // Copilot
   "github.copilot.editor.enableAutoCompletions": true,
   // Formatter
   "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "isort.args": ["--profile", "black"],
+  "editor.codeActionsOnSave": {
+    "source.organizeImports": "always"
+  },
   "[python]": {
     "editor.defaultFormatter": "ms-python.black-formatter"
   },
