@@ -1,68 +1,68 @@
 // For format details, see https://aka.ms/devcontainer.json. For config options, see the
 // README at: https://github.com/devcontainers/templates/tree/main/src/ubuntu
 {
-  "name": "m02uku-devcontainer",
-  // Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
-  "image": "mcr.microsoft.com/devcontainers/base:jammy",
-  "features": {
-    "ghcr.io/devcontainers/features/node:1": {},
-    "ghcr.io/devcontainers/features/python:1": {},
-    "ghcr.io/devcontainers-contrib/features/poetry:2": {}
-  },
-  // Features to add to the dev container. More info: https://containers.dev/features.
-  // "features": {},
-  // Use 'forwardPorts' to make a list of ports inside the container available locally.
-  // "forwardPorts": [],
-  // Use 'postCreateCommand' to run commands after the container is created.
-  // "postCreateCommand": "uname -a",
-  // Configure tool-specific properties.
-  "customizations": {
-    "vscode": {
-      "extensions": [
-        // Copilot
-        "GitHub.copilot",
-        "GitHub.copilot-chat",
-        // Formatter
-        "esbenp.prettier-vscode",
-        "ms-python.black-formatter",
-        // Theme
-        "GitHub.github-vscode-theme",
-        "PKief.material-icon-theme",
-        // Git
-        "mhutchie.git-graph",
-        "eamodio.gitlens",
-        "GitHub.remotehub",
-        // Python
-        "ms-python.python",
-        "njpwerner.autodocstring",
-        "ms-python.isort",
-        "ms-python.vscode-pylance",
-        // Web Development
-        "formulahendry.auto-rename-tag",
-        "dsznajder.es7-react-js-snippets",
-        "ecmel.vscode-html-css",
-        "anteprimorac.html-end-tag-labels",
-        "bradgashler.htmltagwrap",
-        "1natsu.insert-br-tag",
-        "xabikos.JavaScriptSnippets",
-        "glenn2223.live-sass",
-        "Natizyskunk.sftp",
-        // Utility
-        "aaron-bond.better-comments",
-        "vmsynkov.colonize",
-        "inu1255.easy-snippet",
-        "mkxml.vscode-filesize",
-        "VisualStudioExptTeam.intellicode-api-usage-examples",
-        // Markdown
-        "marp-team.marp-vscode",
-        // Minecraft
-        "SPGoding.datapack-language-server",
-        "ChenCMD.mc-datapack-utility",
-        // Linter
-        "dbaeumer.vscode-eslint"
-      ]
+    "name": "m02uku-devcontainer",
+    // Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
+    "image": "mcr.microsoft.com/devcontainers/base:jammy",
+    "features": {
+        "ghcr.io/devcontainers/features/node:1": {},
+        "ghcr.io/devcontainers/features/python:1": {},
+        "ghcr.io/devcontainers-contrib/features/poetry:2": {}
+    },
+    // Features to add to the dev container. More info: https://containers.dev/features.
+    // "features": {},
+    // Use 'forwardPorts' to make a list of ports inside the container available locally.
+    // "forwardPorts": [],
+    // Use 'postCreateCommand' to run commands after the container is created.
+    // "postCreateCommand": "uname -a",
+    // Configure tool-specific properties.
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                // Copilot
+                "GitHub.copilot",
+                "GitHub.copilot-chat",
+                // Formatter
+                "esbenp.prettier-vscode",
+                "ms-python.black-formatter",
+                // Theme
+                "GitHub.github-vscode-theme",
+                "PKief.material-icon-theme",
+                // Git
+                "mhutchie.git-graph",
+                "eamodio.gitlens",
+                "GitHub.remotehub",
+                // Python
+                "ms-python.python",
+                "njpwerner.autodocstring",
+                "ms-python.isort",
+                "ms-python.vscode-pylance",
+                // Web Development
+                "formulahendry.auto-rename-tag",
+                "dsznajder.es7-react-js-snippets",
+                "ecmel.vscode-html-css",
+                "anteprimorac.html-end-tag-labels",
+                "bradgashler.htmltagwrap",
+                "1natsu.insert-br-tag",
+                "xabikos.JavaScriptSnippets",
+                "glenn2223.live-sass",
+                "Natizyskunk.sftp",
+                // Utility
+                "aaron-bond.better-comments",
+                "vmsynkov.colonize",
+                "inu1255.easy-snippet",
+                "mkxml.vscode-filesize",
+                "VisualStudioExptTeam.intellicode-api-usage-examples",
+                // Markdown
+                "marp-team.marp-vscode",
+                // Minecraft
+                "SPGoding.datapack-language-server",
+                "ChenCMD.mc-datapack-utility",
+                // Linter
+                "dbaeumer.vscode-eslint"
+            ]
+        }
     }
-  }
-  // Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
-  // "remoteUser": "root"
+    // Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
+    // "remoteUser": "root"
 }
