@@ -2,11 +2,11 @@
 
 ## How to use
 
-````
 1. プロジェクトルート内にクローンし、`install.sh` を実行：
+
 ```bash
 git clone https://github.com/m02uku/m02uku-devcontainer.git && sh m02uku-devcontainer/install.sh
-````
+```
 
 1. `.gitignore` に以下を追加：
 
