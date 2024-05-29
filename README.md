@@ -2,10 +2,10 @@
 
 ## How to use
 
-1. プロジェクトルート内にクローンし、`install.sh` を実行：
+1. [インストーラ(m-dev-installer.sh)](m-dev-installer.sh) をダウンロード --> 実行：
 
 ```bash
-git clone https://github.com/m02uku/m02uku-devcontainer.git && sh m02uku-devcontainer/install.sh
+sh m-dev-installer.sh
 ```
 
 2. `.gitignore` に以下を追加：
@@ -14,6 +14,7 @@ git clone https://github.com/m02uku/m02uku-devcontainer.git && sh m02uku-devcont
 .devcontainer
 .vscode
 m02uku-devcontainer
+m-dev-installer.sh
 ```
 
 以上。
