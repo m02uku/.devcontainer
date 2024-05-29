@@ -17,6 +17,16 @@ m02uku-devcontainer
 m-dev-installer.sh
 ```
 
+3. 必要ならば以下のどちらかを実行する：
+
+```
+>Dev Containers: Rebuild Container
+```
+
+```
+>Dev Containers: Rebuild Container Without Cache
+```
+
 以上。
 
 ## 注意事項
