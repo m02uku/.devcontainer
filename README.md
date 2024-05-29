@@ -2,7 +2,7 @@
 
 ## How to use
 
-1. [インストーラ(m-dev-installer.sh)](m-dev-installer.sh) をダウンロード --> 実行：
+1. [インストーラ(m-dev-installer.sh)](m-dev-installer.sh) をダウンロード --> プロジェクトルートに設置 --> 実行：
 
 ```bash
 sh m-dev-installer.sh
