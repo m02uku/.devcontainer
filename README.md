@@ -2,10 +2,17 @@
 
 ## How to use
 
-1. [インストーラ(m-dev-installer.sh)](m-dev-installer.sh) をダウンロード --> プロジェクトルートに設置 --> 実行：
+0. プロジェクトルートに `m02uku-devcontainer` がある場合には削除：
 
 ```bash
-sh m-dev-installer.sh
+rm -rf m02uku-devcontainer
+```
+
+1. このリポジトリをプロジェクトルートにクローン --> プロジェクトルートからインストールファイルを実行：
+
+```bash
+git clone https://github.com/m02uku/m02uku-devcontainer.git
+sh m02uku-devcontainer/m-dev-installer.sh
 ```
 
 2. `.gitignore` に以下を追加：
@@ -14,7 +21,6 @@ sh m-dev-installer.sh
 .devcontainer
 .vscode
 m02uku-devcontainer
-m-dev-installer.sh
 ```
 
 3. 必要ならば以下のどちらかを実行する：
