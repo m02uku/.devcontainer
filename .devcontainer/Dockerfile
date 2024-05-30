@@ -7,23 +7,21 @@ WORKDIR /workdir
 FROM base AS python-builder
 # Install dependencies for building Python
 RUN apt update && apt install -y \
-    build-essential \
-    libssl-dev \
-    zlib1g-dev \
-    libbz2-dev \
-    libreadline-dev \
-    libsqlite3-dev \
-    wget \
-    curl \
-    llvm \
-    libncurses5-dev \
-    libncursesw5-dev \
-    xz-utils \
-    tk-dev \
-    libffi-dev \
-    liblzma-dev \
-    python-openssl \
-    git
+build-essential \
+libssl-dev \
+zlib1g-dev \
+libbz2-dev \
+libreadline-dev \
+libsqlite3-dev \
+curl \
+git \
+libncursesw5-dev \
+xz-utils \
+tk-dev \
+libxml2-dev \
+libxmlsec1-dev \
+libffi-dev \
+liblzma-dev
 # Install pyenv
 RUN curl https://pyenv.run | bash
 # Set environment variables for pyenv
