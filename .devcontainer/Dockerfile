@@ -1,5 +1,5 @@
 # Stage 1: Install pyenv, poetry, Node.js, npm
-FROM python:3.9-slim as builder
+FROM python:3.9-slim-bookworm as builder
 
 # Install dependencies required for pyenv and poetry
 RUN apt-get update && apt-get install -y \
@@ -40,7 +40,7 @@ RUN curl -sL https://deb.nodesource.com/setup_14.x | bash -
 RUN apt-get install -y nodejs
 
 # Stage 2: Build the final image
-FROM debian:stretch-slim
+FROM debian:bookworm-slim
 
 # Copy pyenv and poetry installations from the previous stage
 COPY --from=builder /root/.pyenv /root/.pyenv
