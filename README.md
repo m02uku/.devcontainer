@@ -26,11 +26,11 @@ m02uku-devcontainer
 3. 必要ならば以下のどちらかを実行する：
 
 ```
->Dev Containers: Rebuild Container
+>Dev Containers: Rebuild Container Without Cache
 ```
 
 ```
->Dev Containers: Rebuild Container Without Cache
+>Dev Containers: Rebuild Without Cache and Reopen in Container
 ```
 
 以上。
