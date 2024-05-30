@@ -10,8 +10,7 @@
     //     "ghcr.io/devcontainers-contrib/features/poetry:2": {}
     // },
     "build": {
-        "dockerfile": "Dockerfile",
-        "context": ".."
+        "dockerfile": "./Dockerfile"
     },
     // Features to add to the dev container. More info: https://containers.dev/features.
     // "features": {},
