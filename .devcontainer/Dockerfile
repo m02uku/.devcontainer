@@ -55,9 +55,3 @@ RUN apt-get update && apt-get install -y nodejs
 
 # Set the working directory
 WORKDIR /workdir
-
-# Copy the requirements.txt file into the container
-COPY ./requirements.txt .
-
-# Install the required packages
-RUN pip install -r requirements.txt
