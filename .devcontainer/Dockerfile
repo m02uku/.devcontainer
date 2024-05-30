@@ -1,8 +1,12 @@
-# Stage 1: Install pyenv, poetry, Node.js, npm
-FROM python:3.9-slim-bookworm as builder
+# Stage 1: Base image
+FROM debian:bookworm-slim AS base
+# Set the working directory
+WORKDIR /workdir
 
-# Install dependencies required for pyenv and poetry
-RUN apt-get update && apt-get install -y \
+# Stage 2: Install pyenv and Python
+FROM base AS python-builder
+# Install dependencies for building Python
+RUN apt update && apt install -y \
     build-essential \
     libssl-dev \
     zlib1g-dev \
@@ -20,38 +24,39 @@ RUN apt-get update && apt-get install -y \
     liblzma-dev \
     python-openssl \
     git
-
 # Install pyenv
 RUN curl https://pyenv.run | bash
-
 # Set environment variables for pyenv
 ENV PYENV_ROOT /root/.pyenv
 ENV PATH $PYENV_ROOT/shims:$PYENV_ROOT/bin:$PATH
-
-# Install the latest Python version and set it as default
+# Install the latest Python version and set it as the default
 RUN pyenv install 3.9.5
 RUN pyenv global 3.9.5
 
+# Stage 3: Install poetry
+FROM python-builder AS poetry-builder
 # Install poetry
-RUN curl -sSL https://install.python-poetry.org | python -
+RUN curl -sSL https://install.python-poetry.org | bash
+# Set environment variables for poetry
+ENV POETRY_HOME "/poetry"
+ENV PATH $POETRY_HOME/bin:$PATH
 
+# Stage 4: Install Node and npm
+FROM poetry-builder AS node-builder
 # Install Node.js and npm
-RUN curl -sL https://deb.nodesource.com/setup_14.x | bash -
-RUN apt-get install -y nodejs
+RUN apt install -y nodejs npm
 
-# Stage 2: Build the final image
-FROM debian:bookworm-slim
-
-# Copy pyenv and poetry installations from the previous stage
-COPY --from=builder /root/.pyenv /root/.pyenv
-COPY --from=builder /root/.poetry /root/.poetry
-
+# Stage 5: Final image
+FROM base AS final
+# Copy Python from python-builder
+COPY --from=python-builder /root/.pyenv /root/.pyenv
+# Copy poetry from poetry-builder
+COPY --from=poetry-builder /poetry /poetry
+# Copy Node.js and npm from node-builder
+COPY --from=node-builder /usr/bin/node /usr/bin/node
+COPY --from=node-builder /usr/bin/npm /usr/bin/npm
 # Set environment variables for pyenv and poetry
 ENV PYENV_ROOT /root/.pyenv
 ENV PATH $PYENV_ROOT/shims:$PYENV_ROOT/bin:$PATH
-
-# Install Node.js and npm
-RUN apt-get update && apt-get install -y nodejs
-
-# Set the working directory
-WORKDIR /workdir
+ENV POETRY_HOME "/poetry"
+ENV PATH $POETRY_HOME/bin:$PATH

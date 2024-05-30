@@ -4,7 +4,6 @@ Create Dockerfile according to conditions below:
 - Write comments for each step in the Dockerfile.
 - Install pyenv and set the default Python version to latest release.
 - Install poetry and set the default Python version to latest release.
-- Install the required packages using the requirements.txt file.
-- Intall Node.js and npm.
+- Intall Node and npm.
 - Set the working directory to /workdir.
-- Use debian as the base image for the final image.
+- Use debian:bookworm-slim as the base image for the final image.
