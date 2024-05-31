@@ -1,6 +1,6 @@
 # m02uku-devcontainer
 
-## How to use
+## つかいかた
 
 0. プロジェクトルートに `m02uku-devcontainer` がある場合には削除：
 
@@ -28,13 +28,10 @@ m02uku-devcontainer
 
 ```
 >Dev Containers: Rebuild Container Without Cache
-```
-
-```
 >Dev Containers: Rebuild Without Cache and Reopen in Container
 ```
 
-以上。
+おわりィ！
 
 ## 注意事項
 
