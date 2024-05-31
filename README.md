@@ -18,6 +18,7 @@ sh m02uku-devcontainer/m-dev-installer.sh
 2. `.gitignore` に以下を追加：
 
 ```
+# Exclude m02uku-devcontainer
 .devcontainer
 .vscode
 m02uku-devcontainer
