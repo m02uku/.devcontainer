@@ -62,7 +62,9 @@
                 "SPGoding.datapack-language-server",
                 "ChenCMD.mc-datapack-utility",
                 // Linter
-                "dbaeumer.vscode-eslint"
+                "dbaeumer.vscode-eslint",
+                // TOML
+                "tamasfe.even-better-toml"
             ]
         }
     }
