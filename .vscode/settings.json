@@ -6,7 +6,7 @@
     "workbench.editor.wrapTabs": true,
     "editor.tabSize": 4,
     "editor.minimap.enabled": false,
-    "editor.wordWrap": "on",
+    "editor.wordWrap": "off",
     "explorer.compactFolders": false,
     // Copilot
     "github.copilot.editor.enableAutoCompletions": true,
@@ -14,13 +14,14 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "prettier.printWidth": 1024,
     "prettier.tabWidth": 4,
-    "isort.args": ["--profile", "black"],
     "editor.codeActionsOnSave": {
-        "source.organizeImports": "always"
+        "source.organizeImports": "explicit",
+        "source.fixAll": "explicit"
     },
     "[python]": {
         "editor.defaultFormatter": "ms-python.black-formatter"
     },
+    "isort.args": ["--profile", "black"],
     "[toml]": {
         "editor.defaultFormatter": "tamasfe.even-better-toml"
     },
