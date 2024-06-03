@@ -1,1 +1,1 @@
-cp -rf m02uku-devcontainer/.devcontainer . && cp -rf m02uku-devcontainer/.vscode . && echo "m02uku-devcontainer installed!"
+cp -rf devcontainer/.devcontainer . && cp -rf devcontainer/.vscode . && echo "devcontainer installed!"
