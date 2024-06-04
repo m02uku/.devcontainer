@@ -65,7 +65,9 @@
                 // Linter
                 "dbaeumer.vscode-eslint",
                 // TOML
-                "tamasfe.even-better-toml"
+                "tamasfe.even-better-toml",
+                // AWS
+                "AmazonWebServices.aws-toolkit-vscode"
             ]
         }
     }
