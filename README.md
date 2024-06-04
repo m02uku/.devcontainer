@@ -12,7 +12,7 @@ rm -rf devcontainer
 
 ```bash
 git clone https://github.com/m02uku/devcontainer.git
-sh devcontainer/m-dev-installer.sh
+sh devcontainer/install.sh
 ```
 
 2. `.gitignore` に以下を追加：
