@@ -1,52 +1,52 @@
 {
-    // Editor & UI
-    "editor.formatOnSave": true,
-    "editor.insertSpaces": true,
-    "workbench.activityBar.location": "top",
-    "workbench.editor.wrapTabs": true,
-    "editor.tabSize": 4,
-    "editor.minimap.enabled": false,
-    "editor.wordWrap": "off",
-    "explorer.compactFolders": false,
-    // Copilot
-    "github.copilot.editor.enableAutoCompletions": true,
-    // Formatter
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "prettier.printWidth": 1024,
-    "prettier.tabWidth": 4,
-    "editor.codeActionsOnSave": {
-        "source.organizeImports": "explicit",
-        "source.fixAll": "explicit"
-    },
-    "[python]": {
-        "editor.defaultFormatter": "ms-python.black-formatter"
-    },
-    "isort.args": ["--profile", "black"],
-    "[toml]": {
-        "editor.defaultFormatter": "tamasfe.even-better-toml"
-    },
-    // Theme
-    "workbench.colorTheme": "GitHub Dark Dimmed",
-    "workbench.iconTheme": "material-icon-theme",
-    // Live sass compiler
-    "liveSassCompile.settings.watchOnLaunch": true,
-    "liveSassCompile.settings.formats": [
-        {
-            "format": "expanded",
-            "extensionName": ".css",
-            "savePath": null,
-            "savePathReplacementPairs": null
-        }
-    ],
-    // Git
-
-    // Exclude
-    "files.exclude": {
-        "**/.DS_Store": false,
-        "**/.git": false,
-        "**/.hg": false,
-        "**/.svn": false,
-        "**/CVS": false,
-        "**/Thumbs.db": false
+  // Editor & UI
+  "editor.formatOnSave": true,
+  "editor.insertSpaces": true,
+  "workbench.activityBar.location": "top",
+  "workbench.editor.wrapTabs": true,
+  "editor.tabSize": 2,
+  "editor.minimap.enabled": false,
+  "editor.wordWrap": "off",
+  "explorer.compactFolders": false,
+  // Copilot
+  "github.copilot.editor.enableAutoCompletions": true,
+  // Formatter
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "prettier.printWidth": 1024,
+  "prettier.tabWidth": 2,
+  "editor.codeActionsOnSave": {
+    "source.organizeImports": "explicit",
+    "source.fixAll": "explicit"
+  },
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.black-formatter"
+  },
+  "isort.args": ["--profile", "black"],
+  "[toml]": {
+    "editor.defaultFormatter": "tamasfe.even-better-toml"
+  },
+  // Theme
+  "workbench.colorTheme": "GitHub Dark Dimmed",
+  "workbench.iconTheme": "material-icon-theme",
+  // Live sass compiler
+  "liveSassCompile.settings.watchOnLaunch": true,
+  "liveSassCompile.settings.formats": [
+    {
+      "format": "expanded",
+      "extensionName": ".css",
+      "savePath": null,
+      "savePathReplacementPairs": null
     }
+  ],
+  // Git
+
+  // Exclude
+  "files.exclude": {
+    "**/.DS_Store": false,
+    "**/.git": false,
+    "**/.hg": false,
+    "**/.svn": false,
+    "**/CVS": false,
+    "**/Thumbs.db": false
+  }
 }

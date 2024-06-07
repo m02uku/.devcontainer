@@ -18,17 +18,22 @@ sh devcontainer/install.sh
 2. `.gitignore` に以下を追加：
 
 ```
+
 # Exclude devcontainer
+
 .devcontainer
 .vscode
 devcontainer
+
 ```
 
 3. 必要ならば以下のどちらかを実行する：
 
 ```
->Dev Containers: Rebuild Container Without Cache
->Dev Containers: Rebuild Without Cache and Reopen in Container
+
+> Dev Containers: Rebuild Container Without Cache
+> Dev Containers: Rebuild Without Cache and Reopen in Container
+
 ```
 
 おわりィ！
