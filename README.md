@@ -15,7 +15,7 @@ git clone https://github.com/m02uku/devcontainer.git
 sh devcontainer/install.sh
 ```
 
-2. `.gitignore` に以下を追加：
+2. `.gitignore` に以下を追加（プロジェクト内の環境をカスタマイズして保存しておきたい場合には書く必要なし。ただしデプロイ時には除外しなさいね）：
 
 ```
 
