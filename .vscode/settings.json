@@ -8,6 +8,10 @@
   "editor.minimap.enabled": false,
   "editor.wordWrap": "off",
   "explorer.compactFolders": false,
+  "workbench.tree.indent": 8,
+  "workbench.colorCustomizations": {
+    "tree.indentGuidesStroke": "#ffffff"
+  },
   // Copilot
   "github.copilot.editor.enableAutoCompletions": true,
   // Formatter
