@@ -25,7 +25,6 @@ FROM python:${PYTHON_BASE_IMAGE_TAG}
 # Set the working directory
 WORKDIR /workdir
 # Copy Hatch and Node installations from the previous stages
-COPY --from=base /usr/bin/curl /usr/bin/curl
 COPY --from=hatch /usr/local /usr/local
 COPY --from=node /usr/local /usr/local
 # Install git and verify Hatch installation and cleanup
