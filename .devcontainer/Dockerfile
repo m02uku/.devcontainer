@@ -5,12 +5,12 @@ ARG PYTHON_BASE_IMAGE_TAG="3.12-slim-bookworm"
 # Stage 0: Base image
 FROM debian:${DEBIAN_BASE_IMAGE_TAG} AS base
 # Install curl to download Hatch in the next stage
-RUN apt update && apt install -y \
-    curl
 
 # Stage 1: Hatch installation
 FROM base AS hatch
 # Install Hatch from the latest release, unpack, and add it to the PATH
+RUN apt install -y \
+    curl
 RUN curl -OL https://github.com/pypa/hatch/releases/latest/download/hatch-x86_64-unknown-linux-gnu.tar.gz \
     && tar -xvzf hatch-x86_64-unknown-linux-gnu.tar.gz \
     && mv hatch /usr/local/bin \
@@ -29,7 +29,8 @@ COPY --from=base /usr/bin/curl /usr/bin/curl
 COPY --from=hatch /usr/local /usr/local
 COPY --from=node /usr/local /usr/local
 # Install git and verify Hatch installation and cleanup
-RUN apt install -y \
+RUN apt update && apt install -y \
+    curl \
     git \
     && rm -rf /var/lib/apt/lists/* \
     && hatch
