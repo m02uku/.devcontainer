@@ -18,7 +18,7 @@ RUN apt update && apt install -y \
     && curl -OL https://github.com/pypa/hatch/releases/latest/download/hatch-x86_64-unknown-linux-gnu.tar.gz \
     && tar -xvzf hatch-x86_64-unknown-linux-gnu.tar.gz \
     && mv hatch /usr/local/bin \
-    && rm hatch-x86_64-unknown-linux-gnu.tar.gz
+    && rm hatch-x86_64-unknown-linux-gnu.tar.gz \
     && hatch --version
 # Copy the Node and npm binaries from the Node image
 COPY --from=node /usr/local /usr/local
