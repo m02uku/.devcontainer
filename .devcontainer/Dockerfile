@@ -23,7 +23,7 @@ FROM node:${NODE_BASE_IMAGE_TAG} as node
 # No additional steps required as Node and npm are already installed in this image
 
 # Stage 3: Final image
-FROM base
+FROM python:${PYTHON_BASE_IMAGE_TAG}
 # Set the working directory
 WORKDIR /workdir
 # Copy Hatch and Node installations from the previous stages
