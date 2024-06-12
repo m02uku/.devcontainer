@@ -68,7 +68,9 @@
         // TOML
         "tamasfe.even-better-toml",
         // AWS
-        "AmazonWebServices.aws-toolkit-vscode"
+        "AmazonWebServices.aws-toolkit-vscode",
+        // Docker
+        "ms-azuretools.vscode-docker"
       ]
     }
   }

@@ -1,8 +1,10 @@
 ARG DEBIAN_BASE_IMAGE_TAG="bookworm-slim"
 ARG NODE_BASE_IMAGE_TAG="22-bookworm-slim"
+ARG PYTHON_BASE_IMAGE_TAG="3.12-slim-bookworm"
 
 # Stage 0: Base image
-FROM debian:${DEBIAN_BASE_IMAGE_TAG} as base
+# FROM debian:${DEBIAN_BASE_IMAGE_TAG} as base
+FROM python:${PYTHON_BASE_IMAGE_TAG} as base
 # Install curl to download Hatch in the next stage
 RUN apt update \
     && apt install -y \
