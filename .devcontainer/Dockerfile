@@ -7,11 +7,11 @@ FROM node:${NODE_BASE_IMAGE_TAG} AS node
 # No additional steps required as Node and npm are already installed in this image
 
 # Stage 2: Python installation and Hatch installation
-FROM python:${PYTHON_BASE_IMAGE_TAG} AS base
+FROM python:${PYTHON_BASE_IMAGE_TAG}
 # Set the working directory
 WORKDIR /workdir
 # Install additional packages
-RUN apt install -y \
+RUN apt update && apt install -y \
     curl \
     git \
     && rm -rf /var/lib/apt/lists/* \
