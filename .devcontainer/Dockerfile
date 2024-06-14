@@ -21,6 +21,6 @@ RUN apt update && apt install -y \
     && rm hatch-x86_64-unknown-linux-gnu.tar.gz \
     && hatch --version \
     && _HATCH_COMPLETE=bash_source hatch > ~/.hatch-complete.bash \
-    && . ~/.hatch-complete.bash
+    && echo . ~/.hatch-complete.bash >> ~/.bashrc
 # Copy the Node and npm binaries from the Node image
 COPY --from=node /usr/local /usr/local
