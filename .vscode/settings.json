@@ -30,7 +30,7 @@
     "editor.defaultFormatter": "tamasfe.even-better-toml"
   },
   // Theme
-  "workbench.colorTheme": "GitHub Dark Dimmed",
+  "workbench.colorTheme": "Dracula",
   "workbench.iconTheme": "material-icon-theme",
   // Live sass compiler
   "liveSassCompile.settings.watchOnLaunch": true,

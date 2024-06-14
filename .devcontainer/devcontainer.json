@@ -29,7 +29,7 @@
         "esbenp.prettier-vscode",
         "ms-python.black-formatter",
         // Theme
-        "GitHub.github-vscode-theme",
+        "dracula-theme.theme-dracula",
         "PKief.material-icon-theme",
         // Git
         "mhutchie.git-graph",
