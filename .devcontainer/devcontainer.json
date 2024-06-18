@@ -40,6 +40,10 @@
         "njpwerner.autodocstring",
         "ms-python.isort",
         "ms-python.vscode-pylance",
+        // Rust
+        "rust-lang.rust-analyzer",
+        // Julia
+        "julialang.language-julia",
         // Web Development
         "formulahendry.auto-rename-tag",
         "dsznajder.es7-react-js-snippets",
