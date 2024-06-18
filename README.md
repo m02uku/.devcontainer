@@ -20,7 +20,6 @@ sh devcontainer/install.sh
 ```
 
 # Exclude devcontainer
-
 .devcontainer
 .vscode
 devcontainer
