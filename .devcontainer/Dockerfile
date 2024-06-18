@@ -25,12 +25,8 @@ FROM rust:${RUST_BASE_IMAGE_TAG} AS rust
 # Stage 3: Julia installation
 FROM julia:${JULIA_BASE_IMAGE_TAG} AS julia
 
-# Stage 4: Python installation and Hatch installation
+# Stage 4: Python installation
 FROM python:${PYTHON_BASE_IMAGE_TAG} AS python
-
-# Stage 5: rye installation
-FROM base AS rye
-RUN curl -sSf https://rye.astral.sh/get | bash
 
 # Stage 6: Final image
 FROM base
