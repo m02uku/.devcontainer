@@ -14,6 +14,7 @@ ENV PATH="/usr/local/cargo/bin:/usr/local/julia/bin:/root/.codon/bin:${PATH}"
 RUN apt update && apt install -y \
     curl \
     git \
+    tree \
     && rm -rf /var/lib/apt/lists/*
 
 # Stage 1: Node installation
