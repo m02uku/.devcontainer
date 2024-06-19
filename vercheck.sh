@@ -14,6 +14,7 @@ commands_=(
   "node"
   "npm"
   "codon"
+  "gatsby"
 )
 
 for c in "${commands[@]}"

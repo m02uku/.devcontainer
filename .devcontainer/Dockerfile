@@ -14,7 +14,6 @@ ENV PATH="/usr/local/cargo/bin:/usr/local/julia/bin:/root/.codon/bin:${PATH}"
 RUN apt update && apt install -y \
     curl \
     git \
-    hugo \
     && rm -rf /var/lib/apt/lists/*
 
 # Stage 1: Node installation
@@ -37,4 +36,8 @@ COPY --from=rust /usr/local/cargo/ /usr/local/cargo/
 COPY --from=julia /usr/local/julia/ /usr/local/julia/
 COPY --from=python /usr/local/ /usr/local/
 RUN rustup default stable \ 
-    && yes | /bin/bash -c "$(curl -fsSL https://exaloop.io/install.sh)"
+    && yes | /bin/bash -c "$(curl -fsSL https://exaloop.io/install.sh)" \
+    && npm install -g gatsby-cli \
+    && curl -LO https://github.com/gohugoio/hugo/releases/download/v0.127.0/hugo_extended_0.127.0_linux-amd64.deb \
+    && dpkg -i hugo_extended_0.127.0_linux-amd64.deb \
+    && rm hugo_extended_0.127.0_linux-amd64.deb
