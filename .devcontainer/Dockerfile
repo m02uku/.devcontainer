@@ -29,7 +29,7 @@ FROM julia:${JULIA_BASE_IMAGE_TAG} AS julia
 # Stage 4: Python installation
 FROM python:${PYTHON_BASE_IMAGE_TAG} AS python
 
-# Stage 6: Final image
+# Stage 5: Final image
 FROM base
 # Copy installed binaries from previous stages
 COPY --from=node /usr/local/ /usr/local/
