@@ -65,6 +65,7 @@
         "christian-kohler.path-intellisense",
         // Markdown
         "marp-team.marp-vscode",
+        "unifiedjs.vscode-mdx",
         // Minecraft
         "SPGoding.datapack-language-server",
         "ChenCMD.mc-datapack-utility",
