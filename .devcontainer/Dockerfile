@@ -42,4 +42,9 @@ RUN rustup default stable \
     && npm install -g gatsby-cli \
     && curl -LO https://github.com/gohugoio/hugo/releases/download/v0.127.0/hugo_extended_0.127.0_linux-amd64.deb \
     && dpkg -i hugo_extended_0.127.0_linux-amd64.deb \
-    && rm hugo_extended_0.127.0_linux-amd64.deb
+    && rm hugo_extended_0.127.0_linux-amd64.deb \
+    && git clone https://github.com/pyenv/pyenv.git ~/.pyenv \
+    && echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.bashrc \
+    && echo 'command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.bashrc \
+    && echo 'eval "$(pyenv init -)"' >> ~/.bashrc \
+    && source .bashrc
