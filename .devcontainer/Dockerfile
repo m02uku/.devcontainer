@@ -12,6 +12,7 @@ SHELL ["/bin/bash", "-c"]
 ENV PATH="/usr/local/cargo/bin:/usr/local/julia/bin:/root/.codon/bin:${PATH}"
 # Install additional packages
 RUN apt update && apt install -y \
+    build-essential \
     curl \
     git \
     tree \
