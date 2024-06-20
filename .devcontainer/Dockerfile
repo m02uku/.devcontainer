@@ -40,6 +40,7 @@ COPY --from=python /usr/local/ /usr/local/
 RUN rustup default stable \ 
     && yes | /bin/bash -c "$(curl -fsSL https://exaloop.io/install.sh)" \
     && npm install -g gatsby-cli \
+    && gatsby --version \
     && curl -LO https://github.com/gohugoio/hugo/releases/download/v0.127.0/hugo_extended_0.127.0_linux-amd64.deb \
     && dpkg -i hugo_extended_0.127.0_linux-amd64.deb \
     && rm hugo_extended_0.127.0_linux-amd64.deb \
