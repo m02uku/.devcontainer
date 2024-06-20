@@ -11,8 +11,14 @@ rm -rf devcontainer
 1. このリポジトリをプロジェクトルートにクローン --> プロジェクトルートからインストールファイルを実行：
 
 ```bash
-git clone https://github.com/m02uku/devcontainer.git
+git submodule add https://github.com/m02uku/devcontainer.git devcontainer
 sh devcontainer/install.sh
+```
+
+更新する場合には：
+
+```bash
+git submodule update
 ```
 
 2. `.gitignore` に以下を追加（プロジェクト内の環境をカスタマイズして保存しておきたい場合には書く必要なし。ただしデプロイ時には除外しなさいね）：

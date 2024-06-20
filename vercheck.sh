@@ -14,6 +14,7 @@ commands_=(
   "node"
   "npm"
   "codon"
+  "pyenv"
   "gatsby"
 )
 
