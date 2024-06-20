@@ -9,14 +9,30 @@ FROM debian:${DEBIAN_BASE_IMAGE_TAG} AS base
 # Set the default shell to bash
 SHELL ["/bin/bash", "-c"]
 # Set the PATH environment variable
-ENV PATH="/usr/local/cargo/bin:/usr/local/julia/bin:/root/.codon/bin:${PATH}"
+ENV PATH="/usr/local/cargo/bin:/usr/local/julia/bin:/root/.codon/bin:${PATH}" \
+    LANG=C \
+    LANGUAGE=C \
+    LC_ALL=C \
+    LC_CTYPE=C
 # Install additional packages
 RUN apt update && apt install -y \
     build-essential \
+    libssl-dev \
+    zlib1g-dev \
+    libbz2-dev \
+    libreadline-dev \
+    libsqlite3-dev \
     curl \
     git \
+    libncursesw5-dev \
+    xz-utils \
+    tk-dev \
+    libxml2-dev \
+    libxmlsec1-dev \
+    libffi-dev \
+    liblzma-dev \
     tree \
-    && rm -rf /var/lib/apt/lists/*
+    && rm -rf /var/lib/apt/lists/* 
 
 # Stage 1: Node installation
 FROM node:${NODE_BASE_IMAGE_TAG} AS node
