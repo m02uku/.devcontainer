@@ -1,6 +1,5 @@
 {
   // Editor & UI
-  "editor.formatOnSave": true,
   "editor.insertSpaces": true,
   "workbench.activityBar.location": "top",
   "workbench.editor.wrapTabs": true,
@@ -15,6 +14,7 @@
   // Copilot
   "github.copilot.editor.enableAutoCompletions": true,
   // Formatter
+  "editor.formatOnSave": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "prettier.printWidth": 108,
   "prettier.tabWidth": 2,
@@ -23,7 +23,8 @@
     "source.fixAll": "explicit"
   },
   "[python]": {
-    "editor.defaultFormatter": "ms-python.black-formatter"
+    "editor.defaultFormatter": "ms-python.black-formatter",
+    "editor.tabSize": 4
   },
   "isort.args": ["--profile", "black"],
   "[toml]": {

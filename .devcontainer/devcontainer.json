@@ -63,6 +63,7 @@
         "mkxml.vscode-filesize",
         "VisualStudioExptTeam.intellicode-api-usage-examples",
         "christian-kohler.path-intellisense",
+        "mechatroner.rainbow-csv",
         // Markdown
         "marp-team.marp-vscode",
         "unifiedjs.vscode-mdx",
