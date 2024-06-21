@@ -32,6 +32,8 @@ RUN apt update && apt install -y \
     libffi-dev \
     liblzma-dev \
     tree \
+    wget \
+    unzip \
     && rm -rf /var/lib/apt/lists/* 
 
 # Stage 1: Node installation
