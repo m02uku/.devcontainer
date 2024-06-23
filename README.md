@@ -12,7 +12,7 @@ rm -rf devcontainer
 
 ```bash
 git submodule add https://github.com/m02uku/devcontainer.git devcontainer
-sh devcontainer/install.sh
+sh devcontainer/scripts/install.sh
 ```
 
 更新する場合には：
