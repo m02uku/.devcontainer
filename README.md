@@ -45,6 +45,10 @@ devcontainer
 
 ## 注意事項
 
+```bash
+sed -i 's/\r$//' submodules/devcontainer/scripts/*.sh
+```
+
 container 内で開発サーバをたてる場合には
 
 ```bash
