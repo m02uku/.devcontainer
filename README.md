@@ -13,6 +13,8 @@ bash submodules/devcontainer/scripts/init.sh --dev
 Devcontainer に入ってから、必要に応じて以下を実行
 
 ```bash
+# Devcontainer を再インストール（内容を変更した際など）
+bash submodules/devcontainer/scripts/init.sh --dev
 # src ディレクトリを作成
 bash submodules/devcontainer/scripts/init.sh --src
 # Python 仮想環境を構築

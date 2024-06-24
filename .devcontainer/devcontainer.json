@@ -64,6 +64,8 @@
         "VisualStudioExptTeam.intellicode-api-usage-examples",
         "christian-kohler.path-intellisense",
         "mechatroner.rainbow-csv",
+        "hediet.vscode-drawio",
+        "RandomFractalsInc.vscode-vega-viewer",
         // Markdown
         "marp-team.marp-vscode",
         "unifiedjs.vscode-mdx",
