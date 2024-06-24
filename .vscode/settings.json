@@ -46,9 +46,13 @@
       "savePathReplacementPairs": null
     }
   ],
+  // 文字コード自動判定
+  "files.autoGuessEncoding": true,
   // Markdown & Marp
   "markdown.marp.enableHtml": true,
   "markdown.marp.themes": ["https://raw.githubusercontent.com/dracula/marp/master/dracula/dracula.css"],
+  "markdown-pdf.outputDirectory": "out",
+  "markdown-pdf.outputDirectoryRelativePathFile": true,
 
   // Git
 

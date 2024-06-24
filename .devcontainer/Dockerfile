@@ -72,6 +72,10 @@ RUN rustup default stable \
     && curl -LO https://github.com/gohugoio/hugo/releases/download/v0.127.0/hugo_extended_0.127.0_linux-amd64.deb \
     && dpkg -i hugo_extended_0.127.0_linux-amd64.deb \
     && rm hugo_extended_0.127.0_linux-amd64.deb \
+    # Pandoc
+    && curl -LO https://github.com/jgm/pandoc/releases/download/3.2/pandoc-3.2-1-amd64.deb \
+    && dpkg -i pandoc-3.2-1-amd64.deb \
+    && rm pandoc-3.2-1-amd64.deb \
     # Pyenv
     && git clone https://github.com/pyenv/pyenv.git ~/.pyenv \
     && echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.bashrc \
