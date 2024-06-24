@@ -23,12 +23,6 @@ bash submodules/devcontainer/scripts/init.sh --mod
 bash submodules/devcontainer/scripts/init.sh --all
 ```
 
-サブモジュールを、リモートリポジトリに設定されているブランチの最新コミットに更新する場合
-
-```bash
-git submodule update --remote (<submodule path>)
-```
-
 おわりィ！
 
 ## その他
