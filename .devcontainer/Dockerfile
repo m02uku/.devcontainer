@@ -16,6 +16,7 @@ ENV PATH="/usr/local/cargo/bin:/usr/local/julia/bin:/root/.codon/bin:${PATH}" \
     LC_CTYPE=C
 # Install additional packages
 RUN apt update && apt install -y \
+    # Pyenv
     build-essential \
     libssl-dev \
     zlib1g-dev \
@@ -31,10 +32,16 @@ RUN apt update && apt install -y \
     libxmlsec1-dev \
     libffi-dev \
     liblzma-dev \
+    # Flet
+    libgtk-3-0 \
+    libgstreamer-plugins-base1.0-dev \
+    libmpv-dev \
+    mpv \
+    # Other
     tree \
     wget \
     unzip \
-    && rm -rf /var/lib/apt/lists/* 
+    && rm -rf /var/lib/apt/lists/* \
 
 # Stage 1: Node installation
 FROM node:${NODE_BASE_IMAGE_TAG} AS node
@@ -56,14 +63,19 @@ COPY --from=rust /usr/local/cargo/ /usr/local/cargo/
 COPY --from=julia /usr/local/julia/ /usr/local/julia/
 COPY --from=python /usr/local/ /usr/local/
 RUN rustup default stable \ 
+    # Codon
     && yes | /bin/bash -c "$(curl -fsSL https://exaloop.io/install.sh)" \
+    # Gatsby
     && npm install -g gatsby-cli \
     && gatsby --version \
+    # Hugo
     && curl -LO https://github.com/gohugoio/hugo/releases/download/v0.127.0/hugo_extended_0.127.0_linux-amd64.deb \
     && dpkg -i hugo_extended_0.127.0_linux-amd64.deb \
     && rm hugo_extended_0.127.0_linux-amd64.deb \
+    # Pyenv
     && git clone https://github.com/pyenv/pyenv.git ~/.pyenv \
     && echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.bashrc \
     && echo 'command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.bashrc \
     && echo 'eval "$(pyenv init -)"' >> ~/.bashrc \
-    && pip install --upgrade pip
+    # Flet
+    && ln -s /usr/lib/x86_64-linux-gnu/libmpv.so  /usr/lib/libmpv.so.1 
