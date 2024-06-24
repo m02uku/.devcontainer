@@ -1,4 +1,5 @@
-# Description: Create a Python environment for a devcontainer
-git submodule update --init --recursive
+# Description: Update submodules
+git submodule update --remote
+git submodule update --recursive
 
 echo "**Submodules initialized!**"
