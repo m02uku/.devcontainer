@@ -11,22 +11,22 @@ for arg in "$@"
 do
   case $arg in
     --dev)
-      ./submodules/devcontainer/scripts/devcontainer.sh
+      submodules/devcontainer/scripts/devcontainer.sh
       ;;
     --py)
-      ./submodules/devcontainer/scripts/python_env.sh
+      submodules/devcontainer/scripts/python_env.sh
       ;;
     --src)
-      ./submodules/devcontainer/scripts/src.sh
+      submodules/devcontainer/scripts/src.sh
       ;;
     --mod)
-      ./submodules/devcontainer/scripts/submodules.sh
+      submodules/devcontainer/scripts/submodules.sh
       ;;
     --all)
-      ./submodules/devcontainer/scripts/devcontainer.sh
-      ./submodules/devcontainer/scripts/python_env.sh
-      ./submodules/devcontainer/scripts/src.sh
-      ./submodules/devcontainer/scripts/submodules.sh
+      submodules/devcontainer/scripts/devcontainer.sh
+      submodules/devcontainer/scripts/python_env.sh
+      submodules/devcontainer/scripts/src.sh
+      submodules/devcontainer/scripts/submodule.sh
       ;;
     *)
       echo "Unknown option: $arg"

@@ -19,6 +19,8 @@ bash submodules/devcontainer/scripts/init.sh --src
 bash submodules/devcontainer/scripts/init.sh --py
 # サブモジュールの依存関係を初期化
 bash submodules/devcontainer/scripts/init.sh --mod
+# 全てを実行
+bash submodules/devcontainer/scripts/init.sh --all
 ```
 
 サブモジュールを、リモートリポジトリに設定されているブランチの最新コミットに更新する場合
