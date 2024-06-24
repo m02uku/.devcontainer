@@ -2,10 +2,12 @@
 
 ## つかいかた
 
-このリポジトリをクローン
+このリポジトリをクローン ＆ サブモジュールを初期化 ＆ Devcontainer をインストール
 
 ```bash
 git submodule add https://github.com/m02uku/devcontainer.git submodules/devcontainer
+sed -i 's/\r$//' submodules/devcontainer/scripts/*.sh
+bash submodules/devcontainer/scripts/devcontainer.sh
 ```
 
 Devcontainer に入ってから以下を実行
