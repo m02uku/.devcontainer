@@ -20,7 +20,7 @@ do
       submodules/devcontainer/scripts/src.sh
       ;;
     --mod)
-      submodules/devcontainer/scripts/submodules.sh
+      submodules/devcontainer/scripts/submodule.sh
       ;;
     --all)
       submodules/devcontainer/scripts/devcontainer.sh
