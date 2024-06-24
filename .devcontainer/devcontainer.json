@@ -66,6 +66,9 @@
         "mechatroner.rainbow-csv",
         "hediet.vscode-drawio",
         "RandomFractalsInc.vscode-vega-viewer",
+        "bierner.markdown-mermaid",
+        "bpruitt-goddard.mermaid-markdown-syntax-highlighting",
+        "yzane.markdown-pdf",
         // Markdown
         "marp-team.marp-vscode",
         "unifiedjs.vscode-mdx",

@@ -46,6 +46,9 @@
       "savePathReplacementPairs": null
     }
   ],
+  // Markdown & Marp
+  "markdown.marp.enableHtml": true,
+
   // Git
 
   // Exclude
