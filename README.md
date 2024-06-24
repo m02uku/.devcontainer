@@ -2,48 +2,29 @@
 
 ## つかいかた
 
-0. プロジェクトルートに `devcontainer` がある場合には削除：
+このリポジトリをクローン
 
 ```bash
-rm -rf devcontainer
+git submodule add https://github.com/m02uku/devcontainer.git submodules/devcontainer
 ```
 
-1. このリポジトリをプロジェクトルートにクローン --> プロジェクトルートからインストールファイルを実行：
+Devcontainer に入ってから以下を実行
 
 ```bash
-git submodule add https://github.com/m02uku/devcontainer.git devcontainer
-sh devcontainer/scripts/install.sh
+bash submodules/devcontainer/scripts/init.sh
 ```
 
-更新する場合には：
+サブモジュールを更新する場合
 
 ```bash
-git submodule update
-```
-
-2. `.gitignore` に以下を追加（プロジェクト内の環境をカスタマイズして保存しておきたい場合には書く必要なし。ただしデプロイ時には除外しなさいね）：
-
-```
-
-# Exclude devcontainer
-.devcontainer
-.vscode
-devcontainer
-
-```
-
-3. 必要ならば以下のどちらかを実行する：
-
-```
-
-> Dev Containers: Rebuild Container Without Cache
-> Dev Containers: Rebuild Without Cache and Reopen in Container
-
+git submodule update --remote (<submodule path>)
 ```
 
 おわりィ！
 
-## 注意事項
+## その他
+
+`bash submodules/devcontainer/scripts/init.sh`が実行できない場合は改行コードを変更
 
 ```bash
 sed -i 's/\r$//' submodules/devcontainer/scripts/*.sh
