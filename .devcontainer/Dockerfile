@@ -9,12 +9,31 @@ FROM debian:${DEBIAN_BASE_IMAGE_TAG} AS base
 # Set the default shell to bash
 SHELL ["/bin/bash", "-c"]
 # Set the PATH environment variable
-ENV PATH="/usr/local/cargo/bin:/usr/local/julia/bin:/root/.codon/bin:${PATH}" \
-    LANG=C \
-    LANGUAGE=C \
-    LC_ALL=C \
-    LC_CTYPE=C
 # Install additional packages
+ENV PATH="/usr/local/cargo/bin:/usr/local/julia/bin:/root/.codon/bin:${PATH}" \
+    LANG=ja_JP.UTF-8 \
+    LANGUAGE=ja_JP:ja \
+    LC_ALL=ja_JP.UTF-8
+
+# Stage 1: Node installation
+FROM node:${NODE_BASE_IMAGE_TAG} AS node
+
+# Stage 2: Rust installation
+FROM rust:${RUST_BASE_IMAGE_TAG} AS rust
+
+# Stage 3: Julia installation
+FROM julia:${JULIA_BASE_IMAGE_TAG} AS julia
+
+# Stage 4: Python installation
+FROM python:${PYTHON_BASE_IMAGE_TAG} AS python
+
+# Stage 5: Final image
+FROM base
+# Copy installed binaries from previous stages
+COPY --from=node /usr/local/ /usr/local/
+COPY --from=rust /usr/local/cargo/ /usr/local/cargo/
+COPY --from=julia /usr/local/julia/ /usr/local/julia/
+COPY --from=python /usr/local/ /usr/local/
 RUN apt update && apt install -y \
     # Pyenv
     build-essential \
@@ -41,27 +60,21 @@ RUN apt update && apt install -y \
     tree \
     wget \
     unzip \
-    && rm -rf /var/lib/apt/lists/* \
-
-# Stage 1: Node installation
-FROM node:${NODE_BASE_IMAGE_TAG} AS node
-
-# Stage 2: Rust installation
-FROM rust:${RUST_BASE_IMAGE_TAG} AS rust
-
-# Stage 3: Julia installation
-FROM julia:${JULIA_BASE_IMAGE_TAG} AS julia
-
-# Stage 4: Python installation
-FROM python:${PYTHON_BASE_IMAGE_TAG} AS python
-
-# Stage 5: Final image
-FROM base
-# Copy installed binaries from previous stages
-COPY --from=node /usr/local/ /usr/local/
-COPY --from=rust /usr/local/cargo/ /usr/local/cargo/
-COPY --from=julia /usr/local/julia/ /usr/local/julia/
-COPY --from=python /usr/local/ /usr/local/
+    locales \
+    gnupg2 \
+    sudo \
+    # Add developer user to sudoers
+    && echo 'developer ALL=(ALL) NOPASSWD: ALL' >> /etc/sudoers \
+    # Set the locale
+    && sed -i '/ja_JP.UTF-8/s/^# //g' /etc/locale.gen \
+    && locale-gen \
+    # Install Google Chrome
+    && wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add - \
+    && sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list' \
+    && apt update \
+    && apt install -y google-chrome-stable \
+    # Cleanup
+    && rm -rf /var/lib/apt/lists/*
 RUN rustup default stable \ 
     # Codon
     && yes | /bin/bash -c "$(curl -fsSL https://exaloop.io/install.sh)" \
@@ -72,14 +85,15 @@ RUN rustup default stable \
     && curl -LO https://github.com/gohugoio/hugo/releases/download/v0.127.0/hugo_extended_0.127.0_linux-amd64.deb \
     && dpkg -i hugo_extended_0.127.0_linux-amd64.deb \
     && rm hugo_extended_0.127.0_linux-amd64.deb \
-    # Pandoc
-    && curl -LO https://github.com/jgm/pandoc/releases/download/3.2/pandoc-3.2-1-amd64.deb \
-    && dpkg -i pandoc-3.2-1-amd64.deb \
-    && rm pandoc-3.2-1-amd64.deb \
     # Pyenv
     && git clone https://github.com/pyenv/pyenv.git ~/.pyenv \
     && echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.bashrc \
     && echo 'command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.bashrc \
     && echo 'eval "$(pyenv init -)"' >> ~/.bashrc \
     # Flet
-    && ln -s /usr/lib/x86_64-linux-gnu/libmpv.so  /usr/lib/libmpv.so.1 
+    && ln -s /usr/lib/x86_64-linux-gnu/libmpv.so  /usr/lib/libmpv.so.1 \
+    && npm i -g md-to-pdf \
+    # Add developer user
+    && groupadd -r developer && useradd -r -g developer -m -d /home/developer -s /bin/bash developer
+USER developer
+WORKDIR /home/developer

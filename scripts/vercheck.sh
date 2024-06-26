@@ -16,6 +16,7 @@ commands_=(
   "codon"
   "pyenv"
   "gatsby"
+  "pandoc"
 )
 
 for c in "${commands[@]}"

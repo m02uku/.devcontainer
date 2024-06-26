@@ -69,6 +69,10 @@
         "bierner.markdown-mermaid",
         "bpruitt-goddard.mermaid-markdown-syntax-highlighting",
         "tomoki1207.pdf",
+        "yzhang.markdown-all-in-one",
+        "DavidAnson.vscode-markdownlint",
+        "shd101wyy.markdown-preview-enhanced",
+        "ritwickdey.LiveServer",
         // Markdown
         "marp-team.marp-vscode",
         "unifiedjs.vscode-mdx",
