@@ -8,12 +8,6 @@ ARG JULIA_BASE_IMAGE_TAG="1.10-bookworm"
 FROM debian:${DEBIAN_BASE_IMAGE_TAG} AS base
 # Set the default shell to bash
 SHELL ["/bin/bash", "-c"]
-# Set the PATH environment variable
-# Install additional packages
-ENV PATH="/usr/local/cargo/bin:/usr/local/julia/bin:/root/.codon/bin:${PATH}" \
-    LANG=ja_JP.UTF-8 \
-    LANGUAGE=ja_JP:ja \
-    LC_ALL=ja_JP.UTF-8
 
 # Stage 1: Node installation
 FROM node:${NODE_BASE_IMAGE_TAG} AS node
@@ -29,11 +23,21 @@ FROM python:${PYTHON_BASE_IMAGE_TAG} AS python
 
 # Stage 5: Final image
 FROM base
+
 # Copy installed binaries from previous stages
 COPY --from=node /usr/local/ /usr/local/
 COPY --from=rust /usr/local/cargo/ /usr/local/cargo/
 COPY --from=julia /usr/local/julia/ /usr/local/julia/
 COPY --from=python /usr/local/ /usr/local/
+
+# Add developer user / group & Add developer user to sudoers
+# RUN apt update && apt install -y sudo \
+#     && groupadd -r developer && useradd -r -g developer -m -d /home/developer -s /bin/bash developer \
+#     && echo 'developer ALL=(ALL) NOPASSWD: ALL' >> /etc/sudoers
+# USER developer
+# WORKDIR /home/developer
+
+# Install additional packages
 RUN apt update && apt install -y \
     # Pyenv
     build-essential \
@@ -62,13 +66,13 @@ RUN apt update && apt install -y \
     unzip \
     locales \
     gnupg2 \
-    sudo \
+    # Cleanup
+    && rm -rf /var/lib/apt/lists/* \
     # Set the locale
     && sed -i '/ja_JP.UTF-8/s/^# //g' /etc/locale.gen \
     && locale-gen \
-    # Cleanup
-    && rm -rf /var/lib/apt/lists/*
-    RUN rustup default stable \ 
+    # Rust
+    && rustup default stable \ 
     # Codon
     && yes | /bin/bash -c "$(curl -fsSL https://exaloop.io/install.sh)" \
     # Gatsby
@@ -85,9 +89,9 @@ RUN apt update && apt install -y \
     && echo 'eval "$(pyenv init -)"' >> ~/.bashrc \
     # Flet
     && ln -s /usr/lib/x86_64-linux-gnu/libmpv.so  /usr/lib/libmpv.so.1 \
-    && npm i -g md-to-pdf \
-    # Add developer user / group & Add developer user to sudoers
-    && groupadd -r developer && useradd -r -g developer -m -d /home/developer -s /bin/bash developer \
-    && echo 'developer ALL=(ALL) NOPASSWD: ALL' >> /etc/sudoers
-USER developer
-WORKDIR /home/developer
+    && npm i -g md-to-pdf
+
+ENV PATH="/usr/local/cargo/bin:/usr/local/julia/bin:/root/.codon/bin:${PATH}" \
+    LANG=ja_JP.UTF-8 \
+    LANGUAGE=ja_JP:ja \
+    LC_ALL=ja_JP.UTF-8
