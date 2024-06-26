@@ -86,9 +86,8 @@ RUN apt update && apt install -y \
     # Flet
     && ln -s /usr/lib/x86_64-linux-gnu/libmpv.so  /usr/lib/libmpv.so.1 \
     && npm i -g md-to-pdf \
-    # Add developer user
+    # Add developer user / group & Add developer user to sudoers
     && groupadd -r developer && useradd -r -g developer -m -d /home/developer -s /bin/bash developer \
-    # Add developer user to sudoers
     && echo 'developer ALL=(ALL) NOPASSWD: ALL' >> /etc/sudoers
 USER developer
 WORKDIR /home/developer
