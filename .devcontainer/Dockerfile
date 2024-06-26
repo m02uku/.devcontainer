@@ -37,6 +37,8 @@ COPY --from=python /usr/local/ /usr/local/
 # USER developer
 # WORKDIR /home/developer
 
+ENV PATH="/usr/local/cargo/bin:/usr/local/julia/bin:/root/.codon/bin:${PATH}"
+
 # Install additional packages
 RUN apt update && apt install -y \
     # Pyenv
@@ -91,7 +93,6 @@ RUN apt update && apt install -y \
     && ln -s /usr/lib/x86_64-linux-gnu/libmpv.so  /usr/lib/libmpv.so.1 \
     && npm i -g md-to-pdf
 
-ENV PATH="/usr/local/cargo/bin:/usr/local/julia/bin:/root/.codon/bin:${PATH}" \
-    LANG=ja_JP.UTF-8 \
+ENV LANG=ja_JP.UTF-8 \
     LANGUAGE=ja_JP:ja \
     LC_ALL=ja_JP.UTF-8

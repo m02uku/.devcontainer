@@ -6,7 +6,7 @@
 
 ```bash
 git submodule add https://github.com/m02uku/devcontainer.git submodules/devcontainer
-sed -i '' 's/\r$//' submodules/devcontainer/scripts/*.sh
+sed -i 's/\r$//' submodules/devcontainer/scripts/*.sh
 chmod +x submodules/devcontainer/scripts/*.sh
 bash submodules/devcontainer/scripts/init.sh --dev
 ```
