@@ -63,14 +63,12 @@ RUN apt update && apt install -y \
     locales \
     gnupg2 \
     sudo \
-    # Add developer user to sudoers
-    && echo 'developer ALL=(ALL) NOPASSWD: ALL' >> /etc/sudoers \
     # Set the locale
     && sed -i '/ja_JP.UTF-8/s/^# //g' /etc/locale.gen \
     && locale-gen \
     # Cleanup
     && rm -rf /var/lib/apt/lists/*
-RUN rustup default stable \ 
+    RUN rustup default stable \ 
     # Codon
     && yes | /bin/bash -c "$(curl -fsSL https://exaloop.io/install.sh)" \
     # Gatsby
@@ -89,6 +87,8 @@ RUN rustup default stable \
     && ln -s /usr/lib/x86_64-linux-gnu/libmpv.so  /usr/lib/libmpv.so.1 \
     && npm i -g md-to-pdf \
     # Add developer user
-    && groupadd -r developer && useradd -r -g developer -m -d /home/developer -s /bin/bash developer
+    && groupadd -r developer && useradd -r -g developer -m -d /home/developer -s /bin/bash developer \
+    # Add developer user to sudoers
+    && echo 'developer ALL=(ALL) NOPASSWD: ALL' >> /etc/sudoers
 USER developer
 WORKDIR /home/developer
