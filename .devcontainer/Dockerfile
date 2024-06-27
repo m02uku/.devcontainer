@@ -75,8 +75,6 @@ RUN apt update && apt install -y \
     && locale-gen \
     # Rust
     && rustup default stable \ 
-    # Codon
-    && yes | /bin/bash -c "$(curl -fsSL https://exaloop.io/install.sh)" \
     # Gatsby
     && npm install -g gatsby-cli \
     && gatsby --version \
@@ -89,6 +87,8 @@ RUN apt update && apt install -y \
     && echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.bashrc \
     && echo 'command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.bashrc \
     && echo 'eval "$(pyenv init -)"' >> ~/.bashrc \
+    # Codon
+    && yes | /bin/bash -c "$(curl -fsSL https://exaloop.io/install.sh)" \
     # Flet
     && ln -s /usr/lib/x86_64-linux-gnu/libmpv.so  /usr/lib/libmpv.so.1 \
     && npm i -g md-to-pdf
