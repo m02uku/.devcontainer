@@ -23,6 +23,12 @@ git submodule update --init --recursive
 git clone --recursive {gitリポジトリurl}
 ```
 
+- Python のバージョンを指定して仮想環境を構築 & Codon にパスを通す
+
+```bash
+bash submodules/devcontainer/scripts/python_env.sh {PYTHON_VERSION}
+```
+
 - Devcontainer に入ってから，必要に応じて以下を実行
 
 ```bash

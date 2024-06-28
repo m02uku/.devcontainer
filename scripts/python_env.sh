@@ -9,9 +9,9 @@ if [ ! -z "$1" ]; then
   # 追加する行を定義
   export_line="export CODON_PYTHON=\"/root/.pyenv/versions/${version}/lib/libpython3.so\""
 
-  # .bashrcに既に存在するか確認
+  # .bashrcに既に `CODON_PYTHON` が存在するか確認
   if ! grep -qF -- "$export_line" ~/.bashrc; then
-    # 存在しない場合、行を追加
+    # 存在しない場合、追記
     echo "$export_line" >> ~/.bashrc
     echo ".bashrcにCODON_PYTHONを追加しました。"
   else
@@ -20,14 +20,18 @@ if [ ! -z "$1" ]; then
 fi
 # .bashrcの変更を適用
 source ~/.bashrc
+
 # Create a virtual environment
 python3 -m venv .venv
 
+# 仮想環境をアクティベート
 source .venv/bin/activate
+echo 仮想環境に入りました
 
-# Pip
+# Pipを最新に更新
 pip install --upgrade pip
 
+# requirements.txt が存在する場合は依存関係をインストール
 if [ -f requirements.txt ]; then
   pip install -r requirements.txt
 else
